@@ -12,6 +12,7 @@ const ChatsComponent = () => {
             {chats.map((chat,idx) => (
                 <ListGroup.Item
                     action
+                    id="chat"
                     key={idx}
                     active={chat.selected}
                     onClick={() => selectChatIndex(idx)}
