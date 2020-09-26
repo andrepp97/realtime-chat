@@ -15,8 +15,23 @@
     padding: 2rem 0;
 }
 
+
+
+/* ===== SIDEBAR ===== */
 .sidebar-tab {
     width: 250px;
     display: flex;
     flex-direction: column;
+}
+
+
+
+/* ===== CHATS ===== */
+.chat-textarea {
+    resize: none;
+}
+
+#chat.active {
+    color: #FFF !important;
+    background: #28A745 !important;
 }
