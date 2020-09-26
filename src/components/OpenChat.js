@@ -52,8 +52,8 @@ const OpenChat = () => {
                         required
                         value={text}
                         as="textarea"
-                        placeholder="Type something . . ."
                         className="chat-textarea"
+                        placeholder="Type something"
                         onChange={e => setText(e.target.value)}
                         />
                     <InputGroup.Append>

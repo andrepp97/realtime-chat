@@ -9,10 +9,15 @@
     justify-content: center;
 }
 
-.dashboard-page {
-    display: flex;
+.dashboard {
     height: 100vh;
-    padding: 2rem 0;
+    padding: 1rem;
+}
+
+.dashboard-container {
+    height: 100%;
+    display: flex;
+    padding: 1rem 0;
 }
 
 
@@ -34,4 +39,13 @@
 #chat.active {
     color: #FFF !important;
     background: #28A745 !important;
+}
+
+
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 600px) {
+    .dashboard {
+        padding: 0;
+    }    
 }

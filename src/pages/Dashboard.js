@@ -10,10 +10,12 @@ const Dashboard = ({ id, logout }) => {
     const { selectedChat } = useChats()
 
     return (
-        <Container className="dashboard-page">
-            <Sidebar id={id} logout={logout} />
-            {selectedChat && <OpenChat />}
-        </Container>
+        <div className="dashboard">
+            <Container className="dashboard-container shadow">
+                <Sidebar id={id} logout={logout} />
+                {selectedChat && <OpenChat />}
+            </Container>
+        </div>
     );
 };
 
