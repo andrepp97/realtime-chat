@@ -43,7 +43,7 @@
 
 
 /* MEDIA QUERY */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 575px) {
     .dashboard {
         padding: 0;
     }    

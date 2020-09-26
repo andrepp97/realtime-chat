@@ -11,7 +11,7 @@ const Dashboard = ({ id, logout }) => {
 
     return (
         <div className="dashboard">
-            <Container className="dashboard-container shadow">
+            <Container className="dashboard-container shadow p-0">
                 <Sidebar id={id} logout={logout} />
                 {selectedChat && <OpenChat />}
             </Container>
