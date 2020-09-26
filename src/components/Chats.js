@@ -9,17 +9,21 @@ const ChatsComponent = () => {
     // RENDER
     return (
         <ListGroup variant="flush">
-            {chats.map((chat,idx) => (
-                <ListGroup.Item
-                    action
-                    id="chat"
-                    key={idx}
-                    active={chat.selected}
-                    onClick={() => selectChatIndex(idx)}
-                >
-                    {chat.recipients.map(r => r.name).join(', ')}
-                </ListGroup.Item>
-            ))}
+            {
+                chats.length
+                ? chats.map((chat,idx) => (
+                    <ListGroup.Item
+                        action
+                        id="chat"
+                        key={idx}
+                        active={chat.selected}
+                        onClick={() => selectChatIndex(idx)}
+                    >
+                        {chat.recipients.map(r => r.name).join(', ')}
+                    </ListGroup.Item>
+                ))
+                : <p className="text-center text-muted py-3">No Conversations</p>
+            }
         </ListGroup>
     );
 };

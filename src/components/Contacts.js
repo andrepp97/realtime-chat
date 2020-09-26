@@ -7,11 +7,15 @@ const Contacts = () => {
 
     return (
         <ListGroup variant="flush">
-            {contacts.map(contact => (
-                <ListGroup.Item key={contact.id}>
-                    {contact.name}
-                </ListGroup.Item>
-            ))}
+            {
+                contacts.length
+                ? contacts.map(contact => (
+                    <ListGroup.Item key={contact.id}>
+                        {contact.name}
+                    </ListGroup.Item>
+                ))
+                : <p className="text-center text-muted py-3">No Contacts</p>
+            }
         </ListGroup>
     );
 };

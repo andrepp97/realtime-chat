@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
+const socketURL = "https://wazzup-server.herokuapp.com/"
 const SocketContext = createContext()
 
 export const useSocket = () => {
@@ -13,7 +14,7 @@ export const SocketProvider = ({ id, children }) => {
 
     // LIFECYCLE
     useEffect(() => {
-        const newSocket = io('http://localhost:5000', { query: {id} })
+        const newSocket = io(socketURL, { query: {id} })
         setSocket(newSocket)
 
         return () => newSocket.close()
