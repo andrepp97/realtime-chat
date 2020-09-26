@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const PREFIX = "whatsdown-"
+export const PREFIX = "whatsdown-"
 
 const UseLocalStorage = (key, initialValue) => {
     const prefixedKey = PREFIX + key
