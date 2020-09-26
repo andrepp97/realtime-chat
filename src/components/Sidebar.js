@@ -25,15 +25,19 @@ const Sidebar = ({ id }) => {
 
             {/* TABS */}
             <Tab.Container activeKey={active} onSelect={setActive}>
-                <Nav variant="tabs" className="justify-content-center">
-                    <Nav.Item>
-                        <Nav.Link eventKey={CHATS_KEY}>Chats</Nav.Link>
+                <Nav variant="tabs">
+                    <Nav.Item className="flex-grow-1">
+                        <Nav.Link eventKey={CHATS_KEY} className="text-center">
+                            Chats
+                        </Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
+                    <Nav.Item className="flex-grow-1">
+                        <Nav.Link eventKey={CONTACTS_KEY} className="text-center">
+                            Contacts
+                        </Nav.Link>
                     </Nav.Item>
                 </Nav>
-                <Tab.Content className="flex-grow-1 overflow-auto border-right">
+                <Tab.Content className="flex-grow-1 overflow-auto border border-top-0">
                     <Tab.Pane eventKey={CHATS_KEY}>
                         <Chats />
                     </Tab.Pane>
@@ -41,7 +45,7 @@ const Sidebar = ({ id }) => {
                         <Contacts />
                     </Tab.Pane>
                 </Tab.Content>
-                <div className="border-top border-right py-2">
+                <div className="border p-2">
                     <span>Your ID : </span>
                     <small className="text-black-50 font-weight-bold">{id}</small>
                 </div>
