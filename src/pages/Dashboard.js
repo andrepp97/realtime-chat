@@ -6,12 +6,12 @@ import { useChats } from '../context/ChatProvider';
 import Sidebar from '../components/Sidebar';
 import OpenChat from '../components/OpenChat';
 
-const Dashboard = ({ id }) => {
+const Dashboard = ({ id, logout }) => {
     const { selectedChat } = useChats()
 
     return (
         <Container className="dashboard-page">
-            <Sidebar id={id} />
+            <Sidebar id={id} logout={logout} />
             {selectedChat && <OpenChat />}
         </Container>
     );
