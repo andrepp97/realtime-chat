@@ -6,6 +6,7 @@ import { ContactProvider } from './context/ContactProvider';
 // PAGES
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import { SocketProvider } from './context/SocketProvider';
 
 const App = () => {
   // STATE
@@ -16,11 +17,13 @@ const App = () => {
     <div className="main-wrapper">
       {
         userId
-        ? <ContactProvider>
-            <ChatProvider>
-              <Dashboard id={userId} />
-            </ChatProvider>
-          </ContactProvider>
+        ? <SocketProvider id={userId}>
+            <ContactProvider>
+              <ChatProvider id={userId}>
+                <Dashboard id={userId} />
+              </ChatProvider>
+            </ContactProvider>
+          </SocketProvider>
         : <Login userLogin={setUserId} />}
     </div>
   )
