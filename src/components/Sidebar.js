@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logout from '../assets/images/logout.svg';
 import { Tab, Nav, Modal } from 'react-bootstrap';
 
 // COMPONENTS
@@ -10,7 +11,7 @@ import NewContactModal from './NewContactModal';
 const CHATS_KEY = "chats";
 const CONTACTS_KEY = "contacts";
 
-const Sidebar = ({ id }) => {
+const Sidebar = ({ id, logout }) => {
     // STATE
     const [isOpen, setIsOpen] = useState(false)
     const [active, setActive] = useState(CHATS_KEY)
@@ -36,6 +37,14 @@ const Sidebar = ({ id }) => {
                             Contacts
                         </Nav.Link>
                     </Nav.Item>
+                    <button className="btn border d-flex" onClick={logout}>
+                        <img
+                            alt=""
+                            height={20}
+                            src={Logout}
+                            className="m-auto"
+                        />
+                    </button>
                 </Nav>
                 <Tab.Content className="flex-grow-1 overflow-auto border border-top-0">
                     <Tab.Pane eventKey={CHATS_KEY}>
