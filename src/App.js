@@ -12,6 +12,11 @@ const App = () => {
   // STATE
   const [userId, setUserId] = useLocalStorage('id')
 
+  // LOGOUT
+  const userLogout = () => {
+    setUserId(undefined)
+  }
+
   // RENDER
   return (
     <div className="main-wrapper">
@@ -20,7 +25,7 @@ const App = () => {
         ? <SocketProvider id={userId}>
             <ContactProvider>
               <ChatProvider id={userId}>
-                <Dashboard id={userId} />
+                <Dashboard id={userId} logout={userLogout} />
               </ChatProvider>
             </ContactProvider>
           </SocketProvider>
